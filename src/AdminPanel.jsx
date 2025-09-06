@@ -2,39 +2,11 @@ import React, { useState } from "react";
 import "./AdminStyle.css";
 
 export default function Dashboard() {
-  const [videos, setVideos] = useState([
-    {
-      id: 1,
-      title: "Intro to React",
-      course: "Course 1",
-      description: "Getting started with React basics",
-      filepath: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
-    {
-      id: 2,
-      title: "Advanced CSS",
-      course: "Course 2",
-      description: "Styling modern web apps",
-      filepath: "https://www.w3schools.com/html/movie.mp4",
-    },
-  ]);
-
-  // Dummy delete
-  const handleDelete = (id) => {
-    setVideos(videos.filter((v) => v.id !== id));
-  };
-
-  // Dummy upload
+  const [videos, setVideos] = useState([]);
+  
   const handleUpload = (e) => {
     e.preventDefault();
-    const newVideo = {
-      id: Date.now(),
-      title: "New Dummy Video",
-      course: "Course 3",
-      description: "Uploaded for demo only",
-      filepath: "https://www.w3schools.com/html/mov_bbb.mp4",
-    };
-    setVideos([newVideo, ...videos]);
+    alert("Upload functionality not implemented yet!");
   };
 
   return (
@@ -44,6 +16,7 @@ export default function Dashboard() {
         <nav>
           <ul>
             <li className="active">Dashboard</li>
+            <li>Manage Insights</li>
             <li>Manage Videos</li>
             <li>Manage Users</li>
             <li>Settings</li>
@@ -57,9 +30,9 @@ export default function Dashboard() {
         </header>
 
         <section className="stats">
-          <div className="stat-card">Total Videos: {videos.length}</div>
+          <div className="stat-card">Total Videos: 63</div>
           <div className="stat-card">Courses: 15</div>
-          <div className="stat-card">Users: —</div>
+          <div className="stat-card">Users: 1204</div>
         </section>
 
         <section className="upload-section">
@@ -76,7 +49,6 @@ export default function Dashboard() {
             <button type="submit">Upload</button>
           </form>
         </section>
-
       </main>
     </div>
   );
